@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jpmobile1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>SmartPhone</h1>
+
+<%= yield %>
+
+<%= link_to 'PC版の表示', toggle_pc_view_path() %>
+
+</body>
+</html>

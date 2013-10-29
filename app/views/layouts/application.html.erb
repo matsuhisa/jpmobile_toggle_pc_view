@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jpmobile1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<% if request.mobile && request.mobile.tablet? %>
+  <%# なに表示しない %>
+<% else %>
+  <% if request.smart_phone? %>
+  <%= link_to 'スマートフォン版の表示', toggle_pc_view_path(current_path: request.path) %>
+  <% end %>
+<% end %>
+
+</body>
+</html>
